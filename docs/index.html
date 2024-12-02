@@ -6,6 +6,42 @@
   <meta name="description" content="Personal Portfolio Website">
   <title>My Portfolio</title>
   <link rel="stylesheet" href="assets/styles/main.css">
+  <style>
+            body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; }
+        .container { max-width: 800px; margin: auto; }
+        .exercise { margin-bottom: 30px; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+        .box { width: 100px; height: 100px; background-color: #f0f0f0; margin: 10px; display: inline-block; }
+        .highlight { background-color: yellow; }
+
+        .hidden { display: none; }
+        #imageGallery img { width: 150px; height: 150px; margin: 5px; }
+        #imageGallery .active {border: 3px solid blue;}
+        button { margin: 5px; padding: 5px 10px; }
+        .error{color: red; margin-top: 5px;}
+        form div{margin-bottom: 10px;}
+        body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; 
+             }
+        #colorBox {
+      width: 200px;
+      height: 200px;
+      margin: 20px 0;
+      border: 1px solid #000;
+      transition: background-color 0.3s ease;
+    }
+
+    .color-box {
+      width: 50px;
+      height: 50px;
+      margin: 5px;
+      cursor: pointer;
+      display: inline-block;
+      border: 1px solid #ccc;
+      transition: transform 0.2s;
+    }
+    .color-box:hover {
+      transform: scale(1.1);
+    }
+  </style>
 </head>
 <body>
   <!-- Navigation Bar -->
@@ -26,7 +62,7 @@
   <!-- Hero Section -->
   <section id="hero">
     <h1 class="typing-effect">Hello, my name is Ashley Stringer</h1>
-    <p>Web Developer | UI/UX Enthusiast | JavaScript Lover</p>
+    <p>Web Developer | Skilled with HTML | JavaScript Lover</p>
   </section>
 
   <!-- About Section -->
@@ -56,13 +92,18 @@
             <button onclick="changeColor('red')">Red</button>
             <button onclick="changeColor('green')">Green</button>
             <button onclick="changeColor('blue')">Blue</button>
+            <button onclick="changeColor('yellow')">Yellow</button> 
+            <button onclick="resetColor()">Reset</button> 
+
             <script>
                 function changeColor(color) {
                     const box = document.getElementById('colorBox');
                     box.style.backgroundColor = color;
                     
-                    box.style.transition = 'background-color 0.3s ease'
-                }
+        function resetColor() {
+          const box = document.getElementById('colorBox');
+          box.style.backgroundColor = ''; 
+        }
             </script>
         </div>
         <div class="exercise">
