@@ -1,26 +1,28 @@
 // Theme Toggle
 const themeToggle = document.getElementById('theme-toggle');
+
+// Check if there's a stored theme preference
+const storedTheme = localStorage.getItem('theme');
+
+// Apply the stored theme on page load
+if (storedTheme === 'dark') {
+  document.body.setAttribute('data-theme', 'dark');
+  themeToggle.textContent = '🌞'; 
+} else {
+  document.body.removeAttribute('data-theme');
+  themeToggle.textContent = '🌙'; 
+}
+
+// Toggle the theme on button click
 themeToggle.addEventListener('click', () => {
   if (document.body.getAttribute('data-theme') === 'dark') {
     document.body.removeAttribute('data-theme');
-    themeToggle.textContent = '🌙'; // Moon icon for light mode
+    themeToggle.textContent = '🌙'; 
+    localStorage.setItem('theme', 'light'); 
   } else {
     document.body.setAttribute('data-theme', 'dark');
-    themeToggle.textContent = '🌞'; // Sun icon for dark mode
+    themeToggle.textContent = '🌞'; 
+    localStorage.setItem('theme', 'dark'); 
   }
 });
 
-// Typing Effect
-const typingEffect = document.querySelector('.typing-effect');
-const typingText = "Web Developer | UI/UX Enthusiast | JavaScript Lover";
-let i = 0;
-
-function typeWriter() {
-  if (i < typingText.length) {
-    typingEffect.textContent += typingText.charAt(i);
-    i++;
-    setTimeout(typeWriter, 100);
-  }
-}
-
-window.onload = typeWriter;
