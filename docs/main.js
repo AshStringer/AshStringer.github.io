@@ -16,6 +16,7 @@ if (storedTheme === 'dark') {
 
 // Toggle the theme on button click
 themeToggle.addEventListener('click', () => {
+  console.log('Theme toggle clicked!');
   if (body.classList.contains('dark-mode')) {
     body.classList.remove('dark-mode');
     themeToggle.textContent = '🌙'; 
@@ -24,6 +25,10 @@ themeToggle.addEventListener('click', () => {
     body.classList.add('dark-mode');
     themeToggle.textContent = '🌞'; 
     localStorage.setItem('theme', 'dark'); 
+  }
+  if (typeof(Storage) !== "undefined") {
+  } else {
+    console.log('LocalStorage is not available');
   }
 });
 
