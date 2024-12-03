@@ -26,9 +26,6 @@ themeToggle.addEventListener('click', () => {
     themeToggle.textContent = '🌞'; 
     localStorage.setItem('theme', 'dark'); 
   }
-  if (typeof(Storage) !== "undefined") {
-  } else {
-    console.log('LocalStorage is not available');
-  }
+
 });
 
