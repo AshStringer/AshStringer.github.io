@@ -6,6 +6,12 @@
   <meta name="description" content="Contact Ashley Stringer">
   <title>Contact Me - Ashley Stringer</title>
   <link rel="stylesheet" href="assets/styles/main.css">
+  <style>
+            button { padding: 10px 20px;
+                font-size: 1.2rem;
+                cursor: pointer;
+               }
+  </style>
 </head>
 <body>
   <!-- Navigation Bar -->
@@ -19,6 +25,32 @@
       </ul>
       <div class="theme-toggle">
         <button id="theme-toggle">🌙</button>
+
+          <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme === 'dark') {
+      body.classList.add('dark-mode');
+      themeToggle.textContent = '🌞';
+    } else {
+      body.classList.remove('dark-mode');
+      themeToggle.textContent = '🌙';
+    }
+
+    themeToggle.addEventListener('click', () => {
+      if (body.classList.contains('dark-mode')) {
+        body.classList.remove('dark-mode');
+        themeToggle.textContent = '🌙'; 
+        localStorage.setItem('theme', 'light');
+      } else {
+        body.classList.add('dark-mode');
+        themeToggle.textContent = '🌞'; 
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  </script>
       </div>
     </nav>
   </header>
