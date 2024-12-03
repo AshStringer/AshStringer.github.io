@@ -7,7 +7,7 @@ const storedTheme = localStorage.getItem('theme');
 
 // Apply the stored theme on page load
 if (storedTheme === 'dark') {
-  body.classList.add('dark-mode'){
+  body.classList.add('dark-mode');
   themeToggle.textContent = '🌞'; 
 } else {
   body.classList.remove('dark-mode');
